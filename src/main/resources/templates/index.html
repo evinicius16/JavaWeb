@@ -1,0 +1,31 @@
+<html>
+ <head>
+ <title>CRUD Atleta</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <style>
+ table, th, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+ }
+ </style>
+ </head>
+ <body>
+ <a href="insert.html">Inserir novo</a> | <a href="read.html">Ver todos</a> <br> <br>
+ <table style="width:100%">
+ <tr>
+     <th>ID</td>
+     <th>Nome</td>
+     <th>E-mail</td>
+     <th>Excluir?</td>
+     <th>Alterar?</td>
+ </tr>
+ <tr th:each="atleta : ${atleta}">
+     <td th:text="${atleta.id}"></td>
+     <td th:text="${atleta.name}"></td>
+     <td th:text="${atleta.email}"></td>
+     <td><a th:href="@{/delete(id=${atleta.id})}">Deletar</a></td>
+     <td><a th:href="@{/update(id=${atleta.id})}">Alterar</a></td>
+ </tr>
+ </table>
+ </body>
+</html>
