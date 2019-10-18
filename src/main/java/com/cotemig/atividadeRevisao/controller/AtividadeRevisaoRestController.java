@@ -25,7 +25,7 @@ public class AtividadeRevisaoRestController {
  }
 
  @RequestMapping(value = "/rest/get/{id}", method = RequestMethod.GET)
- public Optional<Atleta> getAluno(@PathVariable("id") Integer id) {
+ public Optional<Atleta> getAtleta(@PathVariable("id") Integer id) {
  return atletaService.getAtletaById(id);
  }
     
@@ -35,17 +35,17 @@ public class AtividadeRevisaoRestController {
  }
     
  @RequestMapping(value = "/rest/delete/{id}", method = RequestMethod.DELETE)
- public void deleteAluno(@PathVariable("id") Integer id) {
+ public void deleteAtleta(@PathVariable("id") Integer id) {
  atletaService.deleteAtletaById(id);
  }
     
  @RequestMapping(value = "/rest/update/{id}", method = RequestMethod.POST)
- public void updateAluno(@RequestBody Atleta atleta, @PathVariable("id") Integer id) {
+ public void updateAtleta(@RequestBody Atleta atleta, @PathVariable("id") Integer id) {
      atletaService.updateAtletaById(id, atleta);
  }
     
  @RequestMapping(value = "/rest/insert", method = RequestMethod.POST)
- public void updateAluno(@RequestBody Atleta atleta) {
+ public void updateAtleta(@RequestBody Atleta atleta) {
  atletaService.insertAtleta(atleta);
  }
 }

@@ -10,19 +10,25 @@
  </style>
  </head>
  <body>
- <a href="insert.html">Inserir novo</a> | <a href="read.html">Ver todos</a> <br> <br>
+ <a href="insert">Inserir novo</a> | <a href="read">Ver todos</a> <br> <br>
  <table style="width:100%">
  <tr>
      <th>ID</td>
      <th>Nome</td>
-     <th>E-mail</td>
+     <th>Idade</td>
+     <th>Modalidade</td>
+     <th>Posição</td>
+     <th>Time</td>
      <th>Excluir?</td>
      <th>Alterar?</td>
  </tr>
- <tr th:each="atleta : ${atleta}">
+ <tr th:each="atleta : ${atletas}">
      <td th:text="${atleta.id}"></td>
-     <td th:text="${atleta.name}"></td>
-     <td th:text="${atleta.email}"></td>
+     <td th:text="${atleta.nome}"></td>
+     <td th:text="${atleta.idade}"></td>
+     <td th:text="${atleta.modalidade}"></td>
+     <td th:text="${atleta.posicao}"></td>
+     <td th:text="${atleta.time_id}"></td>
      <td><a th:href="@{/delete(id=${atleta.id})}">Deletar</a></td>
      <td><a th:href="@{/update(id=${atleta.id})}">Alterar</a></td>
  </tr>

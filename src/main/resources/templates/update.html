@@ -7,13 +7,19 @@
  <form action="/update" method="POST" modelAttribute="atleta">
  
  ID:<br>
-   <input type="text" name="id" th:value="${atleta.id}" readOnly="true"><br>
+   <input type="text" nome="id" th:value="${atleta.id}" readOnly="true"><br>
    <br>
    Nome Atleta:<br>
-   <input type="text" name="name" th:value="${atleta.name}"><br>
+   <input type="text" name="nome" th:value="${atleta.nome}"><br>
    <br>
-   Email Atleta:<br>
-   <input type="text" name="email" th:value="${atleta.email}"><br>
+   Idade Atleta:<br>
+   <input type="text" name="idade" th:value="${atleta.idade}"><br>
+   <br>
+   Modalidade Atleta:<br>
+   <input type="text" name="modalidade" th:value="${atleta.modalidade}"><br>
+   <br>
+   Posição Atleta:<br>
+   <input type="text" name="posicao" th:value="${atleta.posicao}"><br>
    
    <input type="submit" value="Atualizar">
  </form>

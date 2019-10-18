@@ -4,13 +4,24 @@
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  </head>
  <body>
- <form action="/insert" method="POST" modelAttribute="aluno">
+ <form action="/insert" method="POST" modelAttribute="atleta">
  
    Nome Atleta:<br>
-   <input type="text" name="name"><br>
+   <input type="text" name="nome"><br>
    <br>
-   Email Atleta:<br>
-   <input type="text" name="email"><br>
+   Idade Atleta:<br>
+   <input type="text" name="idade"><br>
+   <br>
+   Modalidade Atleta:<br>
+   <input type="text" name="modalidade"><br>
+   <br>
+   Posição Atleta:<br>
+   <input type="text" name="posicao"><br>
+      <br>
+   Time Atleta:<br>
+     <select name="time_id">
+  		<option th:each="t : ${times}" th:value="${t.id}" th:text="${t.nome}"></option>
+	 </select><br>
    
    <input type="submit" value="Inserir">
  </form>

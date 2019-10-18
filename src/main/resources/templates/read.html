@@ -1,12 +1,17 @@
 <html>
  <head>
+ 
  <title>Ver todos</title>
      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  </head>
+ 
  <body th:each="atleta : ${atletas}">
+ 
  <span th:text="${'ID: ' + atleta.id}"></span><br>
- <span th:text="${'Nome: ' + atleta.name}"></span><br>
- <span th:text="${'Email: ' + atleta.email}"></span><br>
+ <span th:text="${'Nome: ' + atleta.nome}"></span><br>
+ <span th:text="${'Idade: ' + atleta.idade}"></span><br>
+ <span th:text="${'Modalidade: ' + atleta.modalidade}"></span><br>
+ <span th:text="${'Posição: ' + atleta.posicao}"></span><br>
  <br>
  <br>
  </body>

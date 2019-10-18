@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.cotemig.atividadeRevisao.model.Time;
 import com.cotemig.atividadeRevisao.repository.TimeRepository;
 
-@Service("atletaService")
+@Service("TimeService")
 public class TimeServiceImpl implements TimeService {
  
  @Autowired

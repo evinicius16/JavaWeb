@@ -41,7 +41,9 @@ import com.cotemig.atividadeRevisao.repository.AtletaRepository;
 	 
 	 Optional<Atleta> getAtleta = getAtletaById(id);
 	 getAtleta.get().setNome(atleta.getNome());
-	 
+	 getAtleta.get().setIdade(atleta.getIdade());
+	 getAtleta.get().setModalidade(atleta.getModalidade());
+	 getAtleta.get().setPosicao(atleta.getPosicao());
 	 
 	 atletaRepository.save(atleta);
 	 }

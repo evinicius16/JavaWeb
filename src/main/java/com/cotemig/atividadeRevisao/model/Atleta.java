@@ -4,20 +4,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Atleta {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	public int id;
+	private Integer id;
 	
 	private int idade;
-	public String nome,modalidade,posicao;
+	private String nome,modalidade,posicao;
 	
-	public int getId() {
+	@ManyToOne
+    @JoinColumn(name="time_id", nullable=false)
+    private Time time;
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public int getIdade() {
@@ -44,8 +50,10 @@ public class Atleta {
 	public void setPosicao(String posicao) {
 		this.posicao = posicao;
 	}
-	
-	
-	
-
+	public Time getTime() {
+		return time;
+	}
+	public void setTime(Time time) {
+		this.time = time;
+	}
 }

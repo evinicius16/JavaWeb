@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cotemig.atividadeRevisao.model.Atleta;
+import com.cotemig.atividadeRevisao.model.Time;
 import com.cotemig.atividadeRevisao.service.AtletaService;
+import com.cotemig.atividadeRevisao.service.TimeService;
+
 
 @Controller
 public class AtividadeRevisaoController {
@@ -20,9 +23,17 @@ public class AtividadeRevisaoController {
  @Autowired
  private AtletaService atletaService;
  
+ @Autowired
+ private TimeService timeService;
+ 
  @RequestMapping(value = "/insert", method = RequestMethod.GET)
  public ModelAndView insert() {
-        return new ModelAndView("insert", "atleta", new Atleta());
+        ModelAndView mav = new ModelAndView("insert");
+        
+        mav.addObject("atleta", new Atleta());
+        mav.addObject("Time", timeService.getAllTime());
+        
+        return mav;
  }
  
  @RequestMapping(value = "/insert", method = RequestMethod.POST)
@@ -64,7 +75,7 @@ public class AtividadeRevisaoController {
  }
  
  @RequestMapping(value = "/update", method = RequestMethod.POST)
- public String submitUpdate(@Valid @ModelAttribute("aluno")Atleta atleta,
+ public String submitUpdate(@Valid @ModelAttribute("atleta")Atleta atleta,
       BindingResult result, ModelMap model) {
         
  if (result.hasErrors()) {
@@ -80,7 +91,7 @@ public class AtividadeRevisaoController {
  public ModelAndView read() {
         
         ModelAndView mav = new ModelAndView("read");
-        mav.addObject("alunos", atletaService.getAllAtletas());
+        mav.addObject("atletas", atletaService.getAllAtletas());
         return mav;
  }
  
@@ -88,7 +99,8 @@ public class AtividadeRevisaoController {
  public ModelAndView index() {
         
         ModelAndView mav = new ModelAndView("index");
-        mav.addObject("alunos", atletaService.getAllAtletas());
+        mav.addObject("atletas", atletaService.getAllAtletas());
         return mav;
  }
+ 
 }
